@@ -166,7 +166,7 @@ Click on `Mappers` then `Create`. Fill in the following values:
 
 Click `Save`.
 
-Now we've created a client scope, but we also need to asign it to the client. Go to
+Now we've created a client scope, but we also need to assign it to the client. Go to
 `Clients` and select `js-console`. Select `Client Scopes`.
 
 We're going to add it as a `Default Client Scope`. So select the `avatar` here and click
@@ -366,17 +366,17 @@ While you're looking at the `ID Token` take a note of the kid, try to remember t
 The `kid` refers to the keypair used to sign the token.
 
 Go back to the [Keycloak Admin Console](http://localhost:8080/auth/admin/). Go to
-`Realm Settings` then `Keys`. What we're going to do now is introduce a new set of active keys and
+`Realm Settings` then `Keys`. What we're going to do now is to introduce a new set of active keys and
 mark the previous keys as no longer the active keys. 
 
 Click on `Providers`. From the drop-down select `ecdsa-generated`. Set the priority to `200` and click
 Save. As the priority is higher than the current active keys the new keys will be used next time
 tokens are signed.
 
-Now go back to the JS Console and clik on `Refresh`. Copy the token to the [JWT validation extension](http://localhost:8080/auth/realms/demo/jwt).
-Notice that the `kid` has now changed.
+Now go back to the JS Console and click on `Refresh`. Copy the token to the [JWT validation extension](http://localhost:8080/auth/realms/demo/jwt).
+Notice that the `kid` hasSignin now changed.
 
-What this does is provide a seamless way of changing signatures and keys. Currently logged-in users
+What this does is to provide a seamless way of changing signatures and keys. Currently logged-in users
 will receive new tokens and cookies over time and after a while you can safely remove the old keys
 without affecting any logged-in users.
 
